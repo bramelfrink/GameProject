@@ -84,6 +84,15 @@ if(place_meeting(x,y+vsp,obj_wall)){
     vsp = 0;
 }
 y += vsp;
+
+// Enemy Collision
+if (place_meeting(x,y,obj_player))
+{
+    if(obj_player.y &lt; y-16 || obj_player.x &lt; x-16 || obj_player.x &gt; x-16)
+    {
+        game_restart();
+    }
+}
 </string>
           </argument>
         </arguments>
