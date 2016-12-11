@@ -7,7 +7,100 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialize variables
+
+// Gravity
+grav = 0.2;
+
+// Horizontal speed
+hsp = 0;
+
+// Vertical speed
+vsp = 0;
+
+jumpspeed = 7;
+movespeed = 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Movement
+
+// Player input
+key_jump = keyboard_check_pressed(vk_space);
+key_right = keyboard_check(ord('D'));
+key_left = -keyboard_check(ord('A'));
+
+move = key_left + key_right;
+hsp = move * movespeed;
+
+if(vsp &lt; 10){
+    vsp += grav;
+}
+
+if(place_meeting(x,y+1,obj_wall)){
+    vsp = key_jump * -jumpspeed;
+}
+
+// Horizontal collision
+if(place_meeting(x+hsp,y,obj_wall)){
+    while(!place_meeting(x+sign(hsp),y,obj_wall)){
+        x += sign(hsp);
+    }
+    hsp = 0;
+}
+x += hsp;
+
+// Vertical collision
+if(place_meeting(x,y+vsp,obj_wall)){
+    while(!place_meeting(x,y+sign(vsp),obj_wall)){
+        y += sign(vsp);
+    }
+    vsp = 0;
+}
+y += vsp;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
