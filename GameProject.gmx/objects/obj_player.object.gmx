@@ -39,6 +39,7 @@ vsp = 0;
 jumpspeed_normal = 5;
 jumpspeed_power = 7;
 jumpspeed = jumpspeed_normal;
+shooting = 0;
 movespeed = 4;
 </string>
           </argument>
@@ -93,6 +94,13 @@ key_jump = keyboard_check_pressed(vk_space);
 key_right = keyboard_check(ord('D'));
 key_left = -keyboard_check(ord('A'));
 
+// Direction
+if (key_left){
+    image_angle = 180;
+}
+else { 
+    image_angle = 0;
+}
 move = key_left + key_right;
 hsp = move * movespeed;
 
@@ -140,6 +148,34 @@ y += vsp;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (shooting = 1){
+    bullet = instance_create(x,y,obj_bullet);
+    bullet.direction = image_angle;
+    bullet.speed = 10;
+}
+
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

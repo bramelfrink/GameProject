@@ -11,6 +11,8 @@
     <sprite>sprites\spr_power</sprite>
     <sprite>sprites\spr_player_powerup</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_shooter</sprite>
+    <sprite>sprites\spr_bullet</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,6 +22,8 @@
     <object>objects\obj_power</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
+    <object>objects\obj_power_shoot</object>
+    <object>objects\obj_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
