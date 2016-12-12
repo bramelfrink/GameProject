@@ -98,7 +98,8 @@ key_left = -keyboard_check(ord('A'));
 if (key_left){
     sprite_index = spr_player_left;
 }
-else {
+
+if (key_right) {
     sprite_index = spr_player;
 }
 
