@@ -200,8 +200,6 @@
     <instance objName="obj_woodwall" x="1312" y="640" name="inst_F9C69A27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_woodwall" x="1312" y="672" name="inst_5B14F8AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_woodwall" x="1312" y="704" name="inst_9D2C1070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_woodwall" x="1312" y="512" name="inst_B700B372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_woodwall" x="1280" y="512" name="inst_5F960DCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_power" x="992" y="640" name="inst_7BDFD9A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_woodwall" x="896" y="544" name="inst_41FD0939" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
