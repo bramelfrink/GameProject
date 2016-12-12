@@ -94,6 +94,14 @@ key_jump = keyboard_check_pressed(vk_space);
 key_right = keyboard_check(ord('D'));
 key_left = -keyboard_check(ord('A'));
 
+// Direction
+if (key_left){
+    sprite_index = spr_player_left;
+}
+else {
+    sprite_index = spr_player;
+}
+
 move = key_left + key_right;
 hsp = move * movespeed;
 
@@ -162,7 +170,12 @@ y += vsp;
             <kind>1</kind>
             <string>if (shooting = 1){
     bullet = instance_create(x,y,obj_bullet);
-    bullet.direction = image_angle;
+    if (sprite_index = spr_player_left){
+        bullet.direction = -image_angle;
+    }
+    else {
+        bullet.direction = image_angle;
+    } 
     bullet.speed = 10;
 }
 
