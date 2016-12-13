@@ -14,27 +14,40 @@
       <sprite>sprites\spr_shooter</sprite>
       <sprite>sprites\spr_shooter_left</sprite>
     </sprites>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_power</sprite>
+    <sprites name="powerups">
+      <sprite>sprites\spr_power</sprite>
+      <sprite>sprites\spr_power_shoot</sprite>
+    </sprites>
+    <sprites name="building_blocks">
+      <sprite>sprites\spr_woodwall</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_crate</sprite>
+    </sprites>
     <sprite>sprites\spr_player_powerup</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_woodwall</sprite>
-    <sprite>sprites\spr_power_shoot</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_power</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_enemy_nofall</object>
-    <object>objects\obj_power_shoot</object>
     <object>objects\obj_bullet</object>
-    <object>objects\obj_woodwall</object>
+    <objects name="enemy">
+      <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy_nofall</object>
+    </objects>
+    <objects name="building_blocks">
+      <object>objects\obj_crate</object>
+      <object>objects\obj_woodwall</object>
+      <object>objects\obj_wall</object>
+    </objects>
+    <objects name="powerups">
+      <object>objects\obj_power</object>
+      <object>objects\obj_power_shoot</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_test</room>
     <room>rooms\rm_initialize</room>
   </rooms>
   <help>
