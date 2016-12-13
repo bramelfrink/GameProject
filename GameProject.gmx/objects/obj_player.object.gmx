@@ -46,6 +46,30 @@ movespeed = 4;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shooting = 0;
+sprite_index = spr_player;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -94,15 +118,27 @@ key_jump = keyboard_check_pressed(vk_space);
 key_right = keyboard_check(ord('D'));
 key_left = -keyboard_check(ord('A'));
 
-// Direction
-if (key_left){
-    sprite_index = spr_player_left;
+// Direction normal player
+if(shooting=0){
+    if (keyboard_check_pressed(ord('A'))){
+        sprite_index = spr_player_left;
+    }
+    
+    if (keyboard_check_pressed(ord('D'))) {
+        sprite_index = spr_player;
+    }
 }
 
-if (key_right) {
-    sprite_index = spr_player;
+// Direction shooter player
+if(shooting=1){
+    if (keyboard_check_pressed(ord('A'))){
+        sprite_index = spr_shooter_left;
+    }
+    
+    if (keyboard_check_pressed(ord('D'))) {
+        sprite_index = spr_shooter;
+    }
 }
-
 move = key_left + key_right;
 hsp = move * movespeed;
 
@@ -171,11 +207,11 @@ y += vsp;
             <kind>1</kind>
             <string>if (shooting = 1){
     bullet = instance_create(x,y,obj_bullet);
-    if (sprite_index = spr_player_left){
-        bullet.direction = -image_angle;
+    if (sprite_index = spr_shooter_left){
+        bullet.direction = 180;
     }
     else {
-        bullet.direction = image_angle;
+        bullet.direction = 0;
     } 
     bullet.speed = 10;
 }
