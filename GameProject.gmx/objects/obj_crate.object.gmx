@@ -51,19 +51,21 @@ depth = 1;
           <argument>
             <kind>1</kind>
             <string>// Carry 
-if(carry == false and place_meeting(x,y,obj_player) and keyboard_check_pressed(ord('E'))){
+if(carry == false &amp;&amp; (place_meeting(x+8,y,obj_player) || place_meeting(x-8,y,obj_player))&amp;&amp; keyboard_check_pressed(ord('E')) &amp;&amp; obj_player.carried == noone){
     carry = true;
+    obj_player.carried = obj_crate;
 }
 
 if(carry == true){
     x = obj_player.x;
     y = obj_player.y;
-}
-
-if(carry == true and keyboard_check(ord('Q'))){
+    
+    if(carry == true and keyboard_check(ord('Q'))){
     carry = false;
     x = x;
     y = y;
+    obj_player.carried = noone;
+    }
 }
 </string>
           </argument>
